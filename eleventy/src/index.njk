@@ -1,0 +1,50 @@
+---
+title: Page Title
+layout: base.njk
+---
+
+<main>
+    <div class="animated-bg" style="background-image:url(images/artem-gavrysh-F6-U5fGAOik-unsplash.jpg)"></div>
+    <div class="section intro" id="intro">
+        <h1>Welcome</h1>
+        <p class="intro__subheading">This is a starter website created with 11ty</p>
+    </div>
+    <div class="section about">
+        <h2>About</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean diam mauris, suscipit ac lobortis a, bibendum
+            sed sem. Sed maximus magna sed velit imperdiet rutrum. Nam feugiat diam et sapien sollicitudin posuere.
+            Morbi elementum lacinia faucibus. Quisque id diam egestas.</p>
+    </div>
+    <div class="section section--min-height action">
+        <h2>This is an action section</h2>
+        <a class="action" href="#">
+            <div class="action__wrapper">
+                <p>Click Me!</p>
+                <svg style="enable-background:new 0 0 297 297" version="1.1" viewBox="0 0 297 297">
+                    <polygon points="280 148 17 0 17 83.283 132 148 17 213.15 17 297" />
+                </svg>
+            </div>
+        </a>
+    </div>
+
+    <div class="section contact" id="contact">
+        <h2>Contact</h2>
+        <h3>Send Me A Message</h3>
+        <form class="form" id="contact-form" method="POST"
+            action="https://getform.io/f/764bd3b2-1f33-4976-b5b2-ba5a1a649a60">
+            <div class="form__field">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="form__field">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form__field">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" required></textarea>
+            </div>
+            <input class="form__submit" id="form__submit" type="submit" value="Send Message">
+        </form>
+    </div>
+</main>

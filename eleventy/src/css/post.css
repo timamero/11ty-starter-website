@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+
+/***************************
+  Variables 
+***************************/
+:root {
+  --light: #f3f3f3;
+  --dark: #111111;
+  --red-light: #EA3939;
+  --red: #B00A0F;
+  /*use with light text*/
+  --gold-light: #F9ECA0;
+  --gold: #D9BC0D;
+  --blue-purp-light: #EAEDFE;
+  --dark-transparent: rgb(17, 17, 17, 0.9);
+
+  --full-height: 70vh;
+  --full-width: 90vw;
+  --full-margin: 0 auto 24px auto;
+  --typ-radius: 5px;
+  --btn-radius: 10px;
+  --brand-font: 'Josefin Sans', sans-serif;
+  --heading-font: 'Barlow Condensed', sans-serif;
+  --body-font: 'Cormorant', serif;
+
+  --nav-height: 15vh;
+  --nav-min-height: 50px;
+}
+
+/***************************/
+/* Universal Box Sizing with Inheritance
+ https://css-tricks.com/box-sizing/ */
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  /* get rid of horizontal scroll */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Remove default padding and margin */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/***************************
+  Global Styling 
+***************************/
+body {
+  font-family: var(--body-font);
+  color: var(--light);
+}
+
+h1 {
+  font-size: 4rem;
+  font-family: var(--brand-font);
+}
+
+h2,
+h3 {
+  font-family: var(--heading-font);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s linear;
+  font-family: var(--brand-font);
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--gold-light);
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+/***************************
+  Utility Styles / Single Element Styles
+***************************/
+.animated-bg {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: glide 60s ease-in-out infinite;
+  z-index: -1;
+}
+
+@media screen and (min-width: 600px) {
+  .animated-bg {
+    background-size: 200%;
+  }
+}
+
+@keyframes glide {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+
+/***************************
+  Block Styles
+***************************/
+
+/* Navbar */
+.nav-wrapper {
+  position: relative;
+  height: var(--nav-height);
+  min-height: var(--nav-min-height);
+}
+
+.nav {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+  min-height: inherit;
+  width: 100%;
+  background-color: var(--dark);
+  z-index: 2;
+}
+
+.nav-links-container {
+  position: absolute;
+  top: var(--nav-height);
+  left: -150%;
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 90vh;
+  width: 105vw;
+  background-color: var(--dark);
+  text-align: center;
+  transition: all 0.5s linear;
+}
+
+.nav-links-container li {
+  margin: 16px 0;
+}
+
+.nav-links-container a {
+  color: var(--red-light);
+  font-size: 2.25rem;
+}
+
+.show-nav-links {
+  left: 50%;
+}
+
+.logo {
+  margin-left: 16px;
+  font-family: var(--brand-font);
+  font-size: 1.75rem;
+
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 0 8px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: var(--light);
+}
+
+.hamburger-box {
+  width: 40px;
+  height: calc(var(--nav-height)*50%);
+  min-height: 30px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: var(--light);
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/*
+     * Collapse
+     */
+.hamburger--collapse .hamburger-inner {
+  top: auto;
+  bottom: 0;
+  transition-duration: 0.13s;
+  transition-delay: 0.13s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--collapse .hamburger-inner::after {
+  top: -20px;
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
+}
+
+.hamburger--collapse .hamburger-inner::before {
+  transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--collapse.is-active .hamburger-inner {
+  transform: translate3d(0, -10px, 0) rotate(-45deg);
+  transition-delay: 0.22s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--collapse.is-active .hamburger-inner::after {
+  top: 0;
+  opacity: 0;
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
+}
+
+.hamburger--collapse.is-active .hamburger-inner::before {
+  top: 0;
+  transform: rotate(-90deg);
+  transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+
+/* section */
+.section {
+  margin: var(--full-margin);
+  height: var(--full-height);
+  min-height: 500px;
+  width: var(--full-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--dark);
+  border-radius: var(--typ-radius);
+  text-align: center;
+  color: var(--dark);
+}
+
+.section h2 {
+  margin: 16px;
+}
+
+.section p {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.section--min-height {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  height: max-content;
+  min-height: max-content;
+}
+
+.section--top-margin {
+  margin-top: 24px;
+}
+
+/***** intro *****/
+.intro {
+  height: 100vh;
+  background-color: rgb(243, 243, 243, 0.6);
+  border: none;
+  border-radius: 0;
+}
+
+.intro__subheading {
+  font-size: 2rem;
+  font-family: var(--heading-font);
+  font-weight: 600;
+}
+
+/* action */
+.action {
+  padding-left: 8px;
+  padding-right: 8px;
+  text-decoration: none;
+}
+
+.action__wrapper {
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--gold-light);
+  border-radius: var(--btn-radius);
+  width: 100%;
+  font-weight: 500;
+  transition: var(--typ-transition);
+}
+
+.action p {
+  margin-left: 1rem;
+  font-size: 1.15rem;
+}
+
+.action svg {
+  margin-right: 1rem;
+  height: 1.2rem;
+  fill: var(--dark);
+}
+
+.action__wrapper:hover {
+  background-color: var(--gold);
+}
+
+.action--margin-top-zero {
+  margin-top: 0px;
+}
+
+/* Form */
+.form>* {
+  margin-top: 8px;
+}
+
+.form__field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__field label {
+  text-align: left;
+}
+
+.form input,
+.form textarea {
+  font-family: 'Roboto Mono', monospace;
+  background-color: var(--blue-purp-light);
+  outline: none;
+  border: none;
+  border: 1px dashed transparent;
+  border-radius: var(--typ-radius);
+}
+
+@media screen and (min-width: 600px) {
+
+  .form input[type=text],
+  .form textarea {
+    width: 500px;
+  }
+}
+
+.form input:focus,
+.form textarea:focus {
+  border: 1px solid var(--dark);
+  font-family: var(--body-font);
+}
+
+.form textarea {
+  height: 4rem;
+}
+
+#form__submit {
+  cursor: pointer;
+  padding: 4px 24px;
+  border: none;
+  outline: none;
+  background-color: var(--gold-light);
+  border-radius: var(--btn-radius);
+  transition: all 0.2s linear;
+}
+
+#form__submit:hover {
+  background-color: var(--gold);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  color: var(--dark);
+}

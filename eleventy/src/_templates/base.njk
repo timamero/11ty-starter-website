@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="nav-wrapper">
+        <nav class='nav'>
+            <a class='nav__item logo'>Navbar</a>
+            <ul class="nav__item nav-links-container" id="nav-links-container">
+                <li class="nav__link-wrapper">
+                    <a class="nav__link" href="/about.html">About</a>
+                </li>
+                <li class="nav__link-wrapper">
+                    <a class="nav__link" href="/#contact" id="contact-nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <button class="nav_item hamburger hamburger--collapse" type="button"  aria-label="Main menu">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </nav>
+    </div>
+    <!-- End Navbar -->
+
+    {{ content | safe }}
+
+    <footer class="footer">
+        <p>&#169; 2021 Fatima Camero</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
