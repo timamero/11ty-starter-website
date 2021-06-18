@@ -4,3 +4,4 @@
   # If not set, defaults to the root directory.
   base = "eleventy/"
   publish = "dist"
+  command = "npm run build:prod"
