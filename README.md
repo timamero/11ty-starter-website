@@ -8,3 +8,14 @@ This starter website can be used as the starting point for a portfolio, blog, or
 * Animated hero background
 * About section/page
 * Contact Section 
+
+## Instructions
+* Download project
+* To run the development build, enter the following into the command line (must be inside eleventy folder): 
+    ```
+    npm run start
+    ```
+* To run production build, enter the follwing:
+    ```
+    npm run build:prod
+    ```
