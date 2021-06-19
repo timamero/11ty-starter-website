@@ -96,6 +96,7 @@ p {
   position: absolute;
   top: 0;
   height: 100vh;
+  min-height: 450px;
   width: 100vw;
   margin: 0;
   background-position: center;
@@ -336,16 +337,27 @@ p {
   min-height: max-content;
 }
 
+.section--max-height {
+  height: 50vh;
+}
+
 .section--top-margin {
   margin-top: 24px;
 }
 
 /***** intro *****/
 .intro {
-  height: 85vh;
+  margin-bottom: 40px;
+  height: 82vh;
   background-color: rgb(243, 243, 243, 0.6);
   border: none;
   border-radius: 0;
+}
+
+@media screen and (min-width: 480px) {
+  .intro {
+    min-height: 400px;
+  }
 }
 
 .intro__subheading {
