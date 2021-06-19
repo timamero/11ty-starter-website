@@ -109,6 +109,7 @@ p {
 @media screen and (min-width: 600px) {
   .animated-bg {
     background-size: 200%;
+    overflow: hidden;
   }
 }
 
@@ -341,7 +342,7 @@ p {
 
 /***** intro *****/
 .intro {
-  height: 100vh;
+  height: 85vh;
   background-color: rgb(243, 243, 243, 0.6);
   border: none;
   border-radius: 0;
